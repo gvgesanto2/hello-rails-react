@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'greeting', to: 'greeting#index'
+  get 'greetings', to: 'greetings#index'
   root 'root#index'
 end
