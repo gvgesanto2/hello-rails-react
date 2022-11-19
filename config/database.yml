@@ -1,0 +1,27 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: rails_react_dev
+  username: docker
+  password: docker
+  host: localhost
+  port: 5432
+  
+test:
+  <<: *default
+  database: microverse_hello_rails_react_test
+  username: docker
+  password: docker
+  host: localhost
+  port: 5432
+
+production:
+  <<: *default
+  database: microverse_hello_rails_react_production
+  username: microverse_hello_rails_react
+  password: <%= ENV["MICROVERSE_HELLO_RAILS_REACT_DATABASE_PASSWORD"] %>
